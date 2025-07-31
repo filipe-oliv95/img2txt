@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  backend:
+    container_name: img2txt-backend-dev-container
+    image: img2txt-backend:v1.0.0
+    build:
+      context: ./img2txt-backend  # pasta onde está Dockerfile do Spring Boot
+      dockerfile: Dockerfile
+    environment:
+      - TESSDATA_PREFIX=/app/tessdata
+      - NODE_ENV=production
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+
+  frontend:
+    container_name: img2txt-frontend-dev-container
+    image: img2txt-frontend:v1.0.0
+    build:
+      context: ./img2txt-frontend  # pasta onde está Dockerfile do React/Vite
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+    environment:
+      - CHOKIDAR_USEPOLLING=true  # para hot reload funcionar no container docker (Vite)

@@ -1,6 +1,9 @@
 # Image to Text – OCR with Spring Boot + Tesseract + React
 
-<img src="/assets/usage.gif" alt="Project Demo" width="800"/>
+<div align="center">
+  <img src="/assets/usage.gif" alt="Project Demo" width="800"/>
+  <p><em>Figure 1: Project Demonstration</em></p>
+</div>
 
 ## 📌 Introduction
 This project allows you to convert images into text using a simple web interface built with React, Vite, and TypeScript, and a backend powered by Spring Boot, Java and Tesseract OCR.
@@ -41,6 +44,11 @@ Access the application at: `http://localhost:3000`
 ## 🔍 Structure Overview
 - **Frontend:** Upload images, receive OCR results, styled clean UI
 - **Backend:** Processes image using Tesseract, exposes `/ocr` endpoint
+
+<div align="center">
+  <img src="/assets/system_design.JPG" alt="System Design" width="800"/>
+  <p><em>Figure 2: Solution Architecture</em></p>
+</div>
 
 ## 📈 Possible Improvements
 - Enhance image preprocessing for better OCR accuracy
